@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact CyPython</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    }
+    .neon-border {
+      border: 2px solid #00ff99;
+      box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+    }
+    .neon-button:hover {
+      box-shadow: 0 0 15px #00ff99, 0 0 30px #00ff99;
+    }
+    .form-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .form-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 255, 153, 0.3);
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+  <div class="min-h-screen flex flex-col items-center justify-center px-4">
+    <h1 class="text-5xl font-extrabold mb-3 text-green-400 tracking-wider animate-pulse">Contact CyPython</h1>
+    <p class="mb-10 text-center text-gray-300 max-w-xl text-lg">Want to collaborate, need help, or have a project idea? Drop a message and we'll respond swiftly!</p>
+
+    <form action="https://formspree.io/f/myzjlobj" method="POST" class="form-card bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl w-full max-w-lg space-y-6 neon-border">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-white">
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-white">
+      <textarea name="message" placeholder="Your Message" rows="5" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-white"></textarea>
+      <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg text-lg transition duration-300 shadow-md hover:shadow-xl neon-button">Send Message</button>
+    </form>
+
+    <p class="text-sm text-gray-500 mt-8">© 2025 CyPython | All rights reserved</p>
+  </div>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function () {
+      alert('✅ Thank you for contacting CyPython! We will get back to you soon.');
+    });
+  </script>
+</body>
+</html>
