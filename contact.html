@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Code With MD SOURUV</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    }
+    .neon-border {
+      border: 2px solid #00ff99;
+      box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+    }
+    .neon-button:hover {
+      box-shadow: 0 0 15px #00ff99, 0 0 30px #00ff99;
+    }
+    .form-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .form-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 255, 153, 0.3);
+    }
+    .social-icons a {
+      color: #00ff99;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #ffffff;
+    }
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      box-shadow: 0 4px 15px rgba(0, 255, 153, 0.4);
+      z-index: 1000;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+
+  <!-- Snake Cursor Canvas -->
+  <canvas id="snake-cursor"></canvas>
+
+<!-- ✅ NAVBAR -->
+<nav class="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-lg shadow-md z-50">
+  <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+    <!-- ✅ MD SOURUV as a clickable link -->
+    <a href="https://www.canva.com/design/DAGsHJvTnf4/Wrjutp7coMdbJEugfAq8Ug/view?utm_content=DAGsHJvTnf4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf139a9a05c" target="_blank" class="text-green-400 text-xl font-bold hover:text-white transition duration-200">
+      MD SOURUV
+    </a>
+
+    <ul class="flex space-x-6 text-green-300 font-semibold text-sm">
+      <li><a href="index.html" class="hover:text-white">Home</a></li>
+      <li><a href="about.html" class="hover:text-white">About</a></li>
+      <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+      <li><a href="tools.html" class="hover:text-white">Tools</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <!-- ✅ PAGE CONTENT -->
+  <div class="min-h-screen flex flex-col items-center justify-center px-4 pt-32">
+    <h1 class="text-5xl font-extrabold mb-6 text-green-400 tracking-wider animate-pulse">Contact Me</h1>
+
+    <form action="https://formspree.io/f/myzjlobj" method="POST" class="form-card bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl w-full max-w-lg space-y-6 neon-border">
+      <div class="flex items-center border border-gray-600 bg-gray-800 rounded-lg p-2">
+        <i class="fas fa-user text-green-400 mx-2"></i>
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 bg-transparent focus:outline-none text-white">
+      </div>
+      <div class="flex items-center border border-gray-600 bg-gray-800 rounded-lg p-2">
+        <i class="fas fa-envelope text-green-400 mx-2"></i>
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 bg-transparent focus:outline-none text-white">
+      </div>
+      <div class="flex items-start border border-gray-600 bg-gray-800 rounded-lg p-2">
+        <i class="fas fa-comment text-green-400 mx-2 pt-1"></i>
+        <textarea name="message" placeholder="Your Message" rows="5" required class="w-full p-2 bg-transparent focus:outline-none text-white"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg text-lg transition duration-300 shadow-md hover:shadow-xl neon-button">Send Message</button>
+    </form>
+
+    <div class="social-icons mt-10 flex justify-center">
+      <a href="https://www.youtube.com/@CodeWithCyberpy" title="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+      <a href="https://github.com/shuvo29587" title="GitHub"><i class="fab fa-github fa-lg"></i></a>
+    </div>
+
+    <p class="text-sm text-gray-500 mt-8">©  MD SOURUV | All rights reserved</p>
+  </div>
+
+  <!-- ✅ Confirmation Alert -->
+  <script>
+    document.querySelector('form').addEventListener('submit', function () {
+      alert('✅ Thank you for contacting Code with CyberPY! We will get back to you soon.');
+    });
+  </script>
+
+  <!-- ✅ Snake Cursor JS -->
+  <script>
+    const canvas = document.getElementById('snake-cursor');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    let snake = [];
+    const length = 25;
+    for (let i = 0; i < length; i++) {
+      snake.push({ x: 0, y: 0 });
+    }
+
+    document.addEventListener('mousemove', (e) => {
+      snake[0].x = e.clientX;
+      snake[0].y = e.clientY;
+    });
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = snake.length - 1; i > 0; i--) {
+        snake[i].x = snake[i - 1].x;
+        snake[i].y = snake[i - 1].y;
+      }
+
+      for (let i = 0; i < snake.length; i++) {
+        ctx.beginPath();
+        ctx.arc(snake[i].x, snake[i].y, 6 - i * 0.2, 0, Math.PI * 2);
+        ctx.fillStyle = `hsl(${i * 15}, 100%, 60%)`;
+        ctx.fill();
+      }
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🔐 Cybersecurity Tools Hub - Search & Explore</title>
+
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #0ca4be;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== Navbar ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #002833;
+      border-bottom: 2px solid #00fff7;
+      box-shadow: 0 3px 10px #00fff7aa;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 40px;
+      padding: 15px 10px;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: #00fff7;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #5ff;
+      text-shadow: 0 0 10px #00fff7;
+    }
+
+    /* ===== Header ===== */
+    header {
+      padding: 100px 10px 30px;
+      text-align: center;
+      background: #004d59;
+      box-shadow: 0 0 20px #00fff7aa;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      color: #00fff7;
+      text-shadow: 0 0 10px #00fff7;
+    }
+
+    /* ===== Search Box ===== */
+    .search-box {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .search-box input {
+      width: 90%;
+      max-width: 500px;
+      padding: 12px 15px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 0 15px #00fff7aa;
+      background: #02333b;
+      color: #e0f7fa;
+    }
+
+    .search-box input::placeholder {
+      color: #77e0e7cc;
+    }
+
+    /* ===== Main ===== */
+    main {
+      flex-grow: 1;
+      max-width: 1200px;
+      width: 95%;
+      margin: 30px auto;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #00fff7;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      color: #00e0f7;
+      text-shadow: 0 0 8px #00e0f7;
+    }
+
+    /* ===== Table ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 0 25px #00fff7cc;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #02333b;
+    }
+
+    th, td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #007c91;
+      text-align: left;
+    }
+
+    th {
+      background: #00555f;
+      font-size: 1.1rem;
+    }
+
+    tr:hover {
+      background-color: #00404aaa;
+    }
+
+    a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #002f38;
+      color: #00bcd4;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      box-shadow: inset 0 5px 10px #00404a;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .search-box input {
+        width: 100%;
+      }
+      th, td {
+        padding: 12px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="about.html">👤 About</a></li>
+        <li><a href="contact.html" class="hover:text-white">📞 Contact</a></li>
+
+      <li><a href="tools.html">🧰 Tools</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>🔐 Cybersecurity Tools Hub</h1>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="🔎 Search tools by name or usage..." onkeyup="filterTools()" />
+    </div>
+  </header>
+
+<main>
+  <section id="information-gathering">
+    <h2>🔍 Information Gathering</h2>
+    <table>
+      <thead><tr><th>#</th><th>Tool Name</th><th>Use</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Nmap</td><td>Network scanning and mapping tool</td><td><a href="https://nmap.org" target="_blank" rel="noopener">nmap.org</a></td></tr>
+        <tr><td>2</td><td>Kismet</td><td>Wireless network detector, sniffer, and intrusion detection</td><td><a href="https://www.kismetwireless.net" target="_blank" rel="noopener">kismetwireless.net</a></td></tr>
+        <tr><td>3</td><td>Maltego</td><td>OSINT and data mining tool for information analysis</td><td><a href="https://www.maltego.com" target="_blank" rel="noopener">maltego.com</a></td></tr>
+        <tr><td>4</td><td>theHarvester</td><td>Gather emails, subdomains, hosts, and more</td><td><a href="https://github.com/laramies/theHarvester" target="_blank" rel="noopener">github.com/theHarvester</a></td></tr>
+        <tr><td>5</td><td>Recon-ng</td><td>Full-featured web reconnaissance framework</td><td><a href="https://github.com/lanmaster53/recon-ng" target="_blank" rel="noopener">github.com/recon-ng</a></td></tr>
+        <tr><td>6</td><td>SpiderFoot</td><td>Automate OSINT collection from multiple sources</td><td><a href="https://www.spiderfoot.net" target="_blank" rel="noopener">spiderfoot.net</a></td></tr>
+        <tr><td>7</td><td>Amass</td><td>Network mapping and external asset discovery tool</td><td><a href="https://github.com/OWASP/Amass" target="_blank" rel="noopener">github.com/Amass</a></td></tr>
+        <tr><td>8</td><td>Sublist3r</td><td>Subdomain enumeration using search engines</td><td><a href="https://github.com/aboul3la/Sublist3r" target="_blank" rel="noopener">github.com/Sublist3r</a></td></tr>
+        <tr><td>9</td><td>Assetfinder</td><td>Subdomain discovery using various sources</td><td><a href="https://github.com/tomnomnom/assetfinder" target="_blank" rel="noopener">github.com/assetfinder</a></td></tr>
+        <tr><td>10</td><td>crt.sh</td><td>SSL certificate transparency log search engine</td><td><a href="https://crt.sh" target="_blank" rel="noopener">crt.sh</a></td></tr>
+        <tr><td>11</td><td>Dnsrecon</td><td>Perform DNS enumeration and zone transfers</td><td><a href="https://github.com/darkoperator/dnsrecon" target="_blank" rel="noopener">github.com/dnsrecon</a></td></tr>
+        <tr><td>12</td><td>Fierce</td><td>DNS reconnaissance and attack tool</td><td><a href="https://github.com/mschwager/fierce" target="_blank" rel="noopener">github.com/fierce</a></td></tr>
+        <tr><td>13</td><td>WHOIS</td><td>Domain registration and ownership lookup</td><td><a href="https://whois.domaintools.com" target="_blank" rel="noopener">domaintools.com/whois</a></td></tr>
+        <tr><td>14</td><td>EmailHarvester</td><td>Email enumeration and gathering</td><td><a href="https://github.com/michenriksen/theharvester" target="_blank" rel="noopener">github.com/theharvester</a></td></tr>
+        <tr><td>15</td><td>Shodan</td><td>Search engine for internet-connected devices</td><td><a href="https://www.shodan.io" target="_blank" rel="noopener">shodan.io</a></td></tr>
+        <tr><td>16</td><td>Censys</td><td>Search engine for hosts and networks on the internet</td><td><a href="https://censys.io" target="_blank" rel="noopener">censys.io</a></td></tr>
+        <tr><td>17</td><td>OSINT Framework</td><td>Collection of OSINT tools and resources</td><td><a href="https://osintframework.com" target="_blank" rel="noopener">osintframework.com</a></td></tr>
+        <tr><td>18</td><td>FOCA</td><td>Metadata extraction and document analysis</td><td><a href="https://www.elevenpaths.com/labstools/foca/index.html" target="_blank" rel="noopener">elevenpaths.com/foca</a></td></tr>
+        <tr><td>19</td><td>Netcraft</td><td>Website profiling and phishing detection</td><td><a href="https://www.netcraft.com" target="_blank" rel="noopener">netcraft.com</a></td></tr>
+        <tr><td>20</td><td>BuiltWith</td><td>Website technology lookup and analysis</td><td><a href="https://builtwith.com" target="_blank" rel="noopener">builtwith.com</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="vulnerability-analysis">
+    <h2>🔎 Vulnerability Analysis</h2>
+    <table>
+      <thead><tr><th>#</th><th>Tool Name</th><th>Use</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>OpenVAS</td><td>Open-source vulnerability scanner</td><td><a href="https://www.openvas.org" target="_blank" rel="noopener">openvas.org</a></td></tr>
+        <tr><td>2</td><td>Nessus</td><td>Commercial vulnerability assessment tool</td><td><a href="https://www.tenable.com/products/nessus" target="_blank" rel="noopener">tenable.com/nessus</a></td></tr>
+        <tr><td>3</td><td>Nikto</td><td>Web server scanner for vulnerabilities</td><td><a href="https://cirt.net/Nikto2" target="_blank" rel="noopener">cirt.net/Nikto2</a></td></tr>
+        <tr><td>4</td><td>Wapiti</td><td>Web application security scanner</td><td><a href="http://wapiti.sourceforge.net" target="_blank" rel="noopener">wapiti.sourceforge.net</a></td></tr>
+        <tr><td>5</td><td>Vega</td><td>GUI-based web vulnerability scanner</td><td><a href="https://subgraph.com/vega/" target="_blank" rel="noopener">subgraph.com/vega</a></td></tr>
+        <tr><td>6</td><td>Arachni</td><td>Feature-rich web application security scanner</td><td><a href="https://www.arachni-scanner.com" target="_blank" rel="noopener">arachni-scanner.com</a></td></tr>
+        <tr><td>7</td><td>SQLmap</td><td>Automated SQL injection detection & exploitation</td><td><a href="https://sqlmap.org" target="_blank" rel="noopener">sqlmap.org</a></td></tr>
+        <tr><td>8</td><td>OWASP ZAP</td><td>Open-source web app security scanner</td><td><a href="https://www.zaproxy.org" target="_blank" rel="noopener">zaproxy.org</a></td></tr>
+        <tr><td>9</td><td>Nmap Vulners</td><td>Nmap NSE scripts for CVE detection</td><td><a href="https://github.com/vulnersCom/nmap-vulners" target="_blank" rel="noopener">github.com/nmap-vulners</a></td></tr>
+        <tr><td>10</td><td>Retire.js</td><td>JavaScript library vulnerability scanner</td><td><a href="https://retirejs.github.io/retire.js/" target="_blank" rel="noopener">retirejs.github.io</a></td></tr>
+        <tr><td>11</td><td>Dependency-Check</td><td>Vulnerability analysis for dependencies</td><td><a href="https://owasp.org/www-project-dependency-check/" target="_blank" rel="noopener">owasp.org/dependency-check</a></td></tr>
+        <tr><td>12</td><td>Bandit</td><td>Security linter for Python code</td><td><a href="https://bandit.readthedocs.io/en/latest/" target="_blank" rel="noopener">bandit.readthedocs.io</a></td></tr>
+        <tr><td>13</td><td>Vuls</td><td>Agentless vulnerability scanner for Linux/FreeBSD</td><td><a href="https://vuls.io" target="_blank" rel="noopener">vuls.io</a></td></tr>
+        <tr><td>14</td><td>Trivy</td><td>Vulnerability scanner for containers & dependencies</td><td><a href="https://github.com/aquasecurity/trivy" target="_blank" rel="noopener">github.com/trivy</a></td></tr>
+        <tr><td>15</td><td>Grype</td><td>Vulnerability scanner for container images & filesystems</td><td><a href="https://github.com/anchore/grype" target="_blank" rel="noopener">github.com/grype</a></td></tr>
+        <tr><td>16</td><td>Safety</td><td>Python dependency security scanner</td><td><a href="https://pyup.io/safety/" target="_blank" rel="noopener">pyup.io/safety</a></td></tr>
+        <tr><td>17</td><td>Lychee</td><td>Broken link checker with vulnerability detection potential</td><td><a href="https://github.com/lycheeverse/lychee" target="_blank" rel="noopener">github.com/lychee</a></td></tr>
+        <tr><td>18</td><td>GitLeaks</td><td>Detect hardcoded secrets and sensitive data</td><td><a href="https://github.com/zricethezav/gitleaks" target="_blank" rel="noopener">github.com/gitleaks</a></td></tr>
+        <tr><td>19</td><td>ScoutSuite</td><td>Multi-cloud security auditing tool</td><td><a href="https://github.com/nccgroup/ScoutSuite" target="_blank" rel="noopener">github.com/scoutsuite</a></td></tr>
+        <tr><td>20</td><td>CloudSploit</td><td>AWS security auditing tool</td><td><a href="https://cloudsploit.com" target="_blank" rel="noopener">cloudsploit.com</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="exploitation-tools">
+    <h2>💥 Exploitation Tools</h2>
+    <table>
+      <thead><tr><th>#</th><th>Tool Name</th><th>Use</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Metasploit Framework</td><td>Exploit development and penetration testing</td><td><a href="https://www.metasploit.com" target="_blank" rel="noopener">metasploit.com</a></td></tr>
+        <tr><td>2</td><td>Armitage</td><td>GUI frontend for Metasploit to visualize attacks</td><td><a href="http://www.fastandeasyhacking.com" target="_blank" rel="noopener">fastandeasyhacking.com</a></td></tr>
+        <tr><td>3</td><td>BeEF (Browser Exploitation Framework)</td><td>Browser client-side attack framework</td><td><a href="https://beefproject.com" target="_blank" rel="noopener">beefproject.com</a></td></tr>
+        <tr><td>4</td><td>ExploitDB</td><td>Archive of public exploits and PoCs</td><td><a href="https://www.exploit-db.com" target="_blank" rel="noopener">exploit-db.com</a></td></tr>
+        <tr><td>5</td><td>SearchSploit</td><td>Offline version of ExploitDB for searching exploits</td><td><a href="https://github.com/offensive-security/exploitdb" target="_blank" rel="noopener">github.com/exploitdb</a></td></tr>
+        <tr><td>6</td><td>sqlmap</td><td>Automated SQL injection exploitation tool</td><td><a href="https://sqlmap.org" target="_blank" rel="noopener">sqlmap.org</a></td></tr>
+        <tr><td>7</td><td>Cobalt Strike</td><td>Commercial red team platform</td><td><a href="https://www.cobaltstrike.com" target="_blank" rel="noopener">cobaltstrike.com</a></td></tr>
+        <tr><td>8</td><td>Impacket</td><td>Network protocol manipulation libraries</td><td><a href="https://github.com/SecureAuthCorp/impacket" target="_blank" rel="noopener">github.com/impacket</a></td></tr>
+        <tr><td>9</td><td>Responder</td><td>LLMNR, NBT-NS poisoner</td><td><a href="https://github.com/lgandx/Responder" target="_blank" rel="noopener">github.com/responder</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="post-exploitation">
+    <h2>🔓 Post Exploitation & Privilege Escalation</h2>
+    <table>
+      <thead><tr><th>#</th><th>Tool Name</th><th>Use</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>BloodHound</td><td>Active Directory attack & privilege escalation</td><td><a href="https://github.com/BloodHoundAD/BloodHound" target="_blank" rel="noopener">github.com/BloodHoundAD</a></td></tr>
+        <tr><td>2</td><td>PowerSploit</td><td>PowerShell post-exploitation framework</td><td><a href="https://github.com/PowerShellMafia/PowerSploit" target="_blank" rel="noopener">github.com/PowerSploit</a></td></tr>
+        <tr><td>3</td><td>Empire</td><td>Post-exploitation and C2</td><td><a href="https://github.com/EmpireProject/Empire" target="_blank" rel="noopener">github.com/EmpireProject</a></td></tr>
+        <tr><td>4</td><td>Seatbelt</td><td>Windows security auditing tool</td><td><a href="https://github.com/GhostPack/Seatbelt" target="_blank" rel="noopener">github.com/Seatbelt</a></td></tr>
+        <tr><td>5</td><td>SharpHound</td><td>Data collection for BloodHound</td><td><a href="https://github.com/BloodHoundAD/SharpHound" target="_blank" rel="noopener">github.com/SharpHound</a></td></tr>
+        <tr><td>6</td><td>Mimikatz</td><td>Extract plaintext passwords and hashes</td><td><a href="https://github.com/gentilkiwi/mimikatz" target="_blank" rel="noopener">github.com/mimikatz</a></td></tr>
+        <tr><td>7</td><td>CrackMapExec</td><td>Post-exploitation tool for Windows/AD</td><td><a href="https://github.com/byt3bl33d3r/CrackMapExec" target="_blank" rel="noopener">github.com/CrackMapExec</a></td></tr>
+        <tr><td>8</td><td>Impacket</td><td>Network protocol libs for post-exploitation</td><td><a href="https://github.com/SecureAuthCorp/impacket" target="_blank" rel="noopener">github.com/impacket</a></td></tr>
+        <tr><td>9</td><td>PowerView</td><td>PowerShell tool for AD network reconnaissance</td><td><a href="https://github.com/PowerShellMafia/PowerSploit/tree/master/Recon" target="_blank" rel="noopener">github.com/PowerView</a></td></tr>
+        <tr><td>10</td><td>Responder</td><td>LLMNR, NBT-NS poisoner</td><td><a href="https://github.com/lgandx/Responder" target="_blank" rel="noopener">github.com/responder</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="defensive-tools">
+    <h2>🛡️ Defensive Tools</h2>
+    <table>
+      <thead><tr><th>#</th><th>Tool Name</th><th>Use</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Snort</td><td>Open-source network intrusion detection system</td><td><a href="https://www.snort.org" target="_blank" rel="noopener">snort.org</a></td></tr>
+        <tr><td>2</td><td>Suricata</td><td>High-performance IDS/IPS and monitoring</td><td><a href="https://suricata.io" target="_blank" rel="noopener">suricata.io</a></td></tr>
+        <tr><td>3</td><td>OSSEC</td><td>Host-based intrusion detection system</td><td><a href="https://www.ossec.net" target="_blank" rel="noopener">ossec.net</a></td></tr>
+        <tr><td>4</td><td>Wazuh</td><td>Security monitoring and threat detection</td><td><a href="https://wazuh.com" target="_blank" rel="noopener">wazuh.com</a></td></tr>
+        <tr><td>5</td><td>Zeek (Bro)</td><td>Network security monitoring platform</td><td><a href="https://zeek.org" target="_blank" rel="noopener">zeek.org</a></td></tr>
+        <tr><td>6</td><td>Elastic Security (ELK)</td><td>SIEM and log management</td><td><a href="https://www.elastic.co/security" target="_blank" rel="noopener">elastic.co/security</a></td></tr>
+        <tr><td>7</td><td>AlienVault OSSIM</td><td>Open-source SIEM platform</td><td><a href="https://www.alienvault.com/products/ossim" target="_blank" rel="noopener">alienvault.com/ossim</a></td></tr>
+        <tr><td>8</td><td>Splunk</td><td>Log management and SIEM</td><td><a href="https://www.splunk.com" target="_blank" rel="noopener">splunk.com</a></td></tr>
+        <tr><td>9</td><td>ClamAV</td><td>Open-source antivirus engine</td><td><a href="https://www.clamav.net" target="_blank" rel="noopener">clamav.net</a></td></tr>
+        <tr><td>10</td><td>Firejail</td><td>Linux sandboxing tool</td><td><a href="https://firejail.wordpress.com" target="_blank" rel="noopener">firejail.wordpress.com</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<footer>
+  &copy; HELLO BROTHER&copy;
+</footer>
+
+<script>
+  function filterTools() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const tables = document.querySelectorAll('tbody');
+    tables.forEach(tbody => {
+      Array.from(tbody.rows).forEach(row => {
+        const name = row.cells[1].textContent.toLowerCase();
+        const use = row.cells[2].textContent.toLowerCase();
+        if (name.includes(input) || use.includes(input)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
