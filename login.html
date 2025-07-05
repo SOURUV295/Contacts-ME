@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberPy Auth</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDKs -->
+  <script type="module">
+    // Import Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+
+    // Firebase config from your project
+    const firebaseConfig = {
+      apiKey: "AIzaSyDUMBSfG1gfWWlp5LzLHLjapvkm6UeYYBs",
+      authDomain: "cyberpy-cfdf3.firebaseapp.com",
+      projectId: "cyberpy-cfdf3",
+      storageBucket: "cyberpy-cfdf3.firebasestorage.app",
+      messagingSenderId: "1040741774830",
+      appId: "1:1040741774830:web:98204dd365497143884aff",
+      measurementId: "G-JQFZJ4QWL6"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    window.signInWithGoogle = () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          const user = result.user;
+          alert(`Welcome, ${user.displayName}`);
+          console.log("Logged in user:", user);
+        })
+        .catch((error) => {
+          console.error("Google login failed", error);
+          alert("Google login failed");
+        });
+    };
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">CyberPy</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="video.html">Video</a></li>
+                 <li><a href="login.html">Sign Up</a></li>
+
+
+
+
+    </ul>
+  </nav>
+
+  <!-- Auth Section -->
+  <div class="container">
+    <div class="form-box" id="formBox">
+      <h2 id="formTitle">Login</h2>
+      <input type="text" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button>SignUp</button>
+
+      <!-- Google Sign-In -->
+      <button class="google-btn" onclick="signInWithGoogle()">Sign in with Google</button>
+
+     
+    </div>
+  </div>
+
+</body>
+</html>

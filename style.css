@@ -1,0 +1,115 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #141e30, #243b55);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00ffcc;
+}
+
+/* Auth Box */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box {
+  background: rgba(255,255,255,0.08);
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  text-align: center;
+  width: 350px;
+}
+
+.form-box h2 {
+  margin-bottom: 20px;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00ffcc;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-box button:hover {
+  background-color: #00ccaa;
+}
+
+/* Google Button */
+.google-btn {
+  background-color: white;
+  color: #444;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.google-btn:hover {
+  background-color: #f1f1f1;
+}
+
+#switchForm {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#switchForm span {
+  color: #00ffcc;
+  cursor: pointer;
+  font-weight: bold;
+}
