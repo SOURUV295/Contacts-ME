@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyberPy Videos & Shorts</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #00ffcc;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px #00ffcc44;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #fff;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #00ffcc;
+      font-size: 30px;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .video-section, .shorts-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .video-box, .shorts-box {
+      background-color: #222;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ffcc55;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+
+    .video-box:hover, .shorts-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px #00ffccaa;
+    }
+
+    .video-box iframe {
+      width: 350px;
+      height: 200px;
+      border: none;
+      display: block;
+    }
+
+    .shorts-box iframe {
+      width: 200px;
+      height: 355px;
+      border: none;
+      display: block;
+    }
+
+    .description {
+      text-align: center;
+      padding: 10px;
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .video-box iframe,
+      .shorts-box iframe {
+        width: 100%;
+        height: auto;
+      }
+
+      .video-box, .shorts-box {
+        width: 90%;
+      }
+
+      .video-section, .shorts-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔷 Navbar -->
+  <nav class="navbar">
+    <div class="logo">⚡ CyberPy</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="video.html">YouTube</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🔷 Section: Regular Videos -->
+  <section class="section-container" id="youtube">
+    <h2>🎥 আমার ইউটিউব ভিডিও</h2>
+    <div class="video-section">
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/04z8RYea8aQ" allowfullscreen></iframe>
+        <div class="description"><strong>Hacker Search Engine</strong></div>
+      </div>
+
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/o0l2Ko2Kiw4" allowfullscreen></iframe>
+        <div class="description"><strong>How to Download VS Code</strong></div>
+      </div>
+    </div>
+  </section>
+
+  
+
+</body>
+</html>
